@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper: #f4efe3;
+  --color-paper-alt: #ede4cf;
+  --color-ink: #1a1613;
+  --color-ink-soft: #6b6255;
+  --color-line: #c9bfa8;
+  --color-accent-red: #d6402c;
+  --color-accent-electric: #4a4ce8;
+}
+
+@theme inline {
+  --color-paper: var(--color-paper);
+  --color-paper-alt: var(--color-paper-alt);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-line: var(--color-line);
+  --color-accent-red: var(--color-accent-red);
+  --color-accent-electric: var(--color-accent-electric);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-handwritten: var(--font-handwritten);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+/* Paper-grain overlay: pure CSS/SVG noise, no image asset required */
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+::selection {
+  background: var(--color-accent-electric);
+  color: var(--color-paper);
+}

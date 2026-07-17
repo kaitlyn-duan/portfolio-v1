@@ -31,6 +31,20 @@ body {
   font-family: var(--font-body);
 }
 
+/* Subtle workboard/blueprint grid, sits behind content across the whole site */
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.2;
+  mix-blend-mode: multiply;
+  background-image:
+    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
 /* Paper-grain overlay: pure CSS/SVG noise, no image asset required */
 .grain-overlay {
   position: fixed;

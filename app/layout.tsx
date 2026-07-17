@@ -4,6 +4,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { Grain } from "@/components/shared/Grain";
+import { Grid } from "@/components/shared/Grid";
 import { site } from "@/lib/data/site";
 import "./globals.css";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} ${handwritten.variable} ${mono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-paper text-ink">
+        <Grid />
         <Grain />
         <Nav />
         <main className="flex-1">

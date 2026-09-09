@@ -8,6 +8,16 @@ export type ExperienceEntry = {
 
 export const experience: ExperienceEntry[] = [
   {
+    company: "Digital Extremes",
+    role: "Product Designer",
+    timeframe: "2026 (8 months)",
+    type: "work",
+    bullets: [
+      "Designed player-facing web experiences for Warframe, including the referral page and an end-to-end charity campaign page.",
+      "Owned the design and user flow of the charity page from concept through handoff.",
+    ],
+  },
+  {
     company: "ITSP",
     role: "Product Design Intern",
     timeframe: "2024",

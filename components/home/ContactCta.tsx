@@ -12,7 +12,7 @@ export function ContactCta() {
           </h2>
           <a
             href={`mailto:${site.email}`}
-            className="inline-flex w-fit items-center gap-2 rounded-full bg-ink px-6 py-3 font-body text-sm uppercase tracking-wide text-paper transition-colors hover:bg-accent-red"
+            className="inline-flex w-fit items-center gap-2 rounded-full border border-ink bg-ink px-6 py-3 font-body text-sm uppercase tracking-wide text-paper transition-colors hover:bg-paper hover:text-ink"
           >
             {site.email}
           </a>

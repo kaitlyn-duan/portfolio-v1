@@ -12,6 +12,9 @@ export type Project = {
   thumbnail?: string;
   tags: string[];
   featured: boolean;
+  // Teased on the work grid but not linked anywhere yet: the card renders
+  // blurred behind a "coming soon" pill instead of becoming a link.
+  comingSoon?: boolean;
   heroAspectRatio: "16/9" | "4/3" | "1/1" | "3/4";
   metrics: { label: string; value: string }[];
   problem: string;
@@ -82,29 +85,23 @@ export const projects: Project[] = [
     outcome: "Shipped to production.",
   },
   {
-    slug: "awowogei-arts",
-    title: "Awowogei Arts",
-    company: "Founder",
+    slug: "warframe-charity-page",
+    title: "Warframe Charity Page",
+    company: "Digital Extremes",
     oneLiner:
-      "A self-built, user-focused storefront for custom prints, grown through community and data-driven marketing.",
-    role: "Founder",
-    duration: "Independent business",
-    season: "Ongoing",
-    teamSize: "Solo",
-    tags: ["Founder", "Growth", "Community"],
+      "A charity campaign page for Warframe at Digital Extremes, where I owned the design and the full user flow end to end.",
+    role: "Product Designer",
+    duration: "Digital Extremes",
+    season: "2026",
+    thumbnail: `${basePath}/images/work/warframe-charity-thumbnail.jpg`,
+    tags: ["End-to-End Design", "User Flows", "Campaign Page"],
     featured: false,
-    heroAspectRatio: "1/1",
-    metrics: [
-      { label: "ARR", value: "$6,000/mo" },
-      { label: "Organic search", value: "+60%" },
-      { label: "Followers", value: "+500%" },
-    ],
-    problem:
-      "Building an audience and a store from scratch, with no existing brand or traffic.",
-    process:
-      "Built a self-developed storefront, started a Discord community for direct feedback, and used search-query and trend analytics to guide growth.",
-    outcome:
-      "Grew to $6,000/month ARR, +60% organic search results, and +500% followers to 100k+ in one month.",
+    comingSoon: true,
+    heroAspectRatio: "16/9",
+    metrics: [],
+    problem: "",
+    process: "",
+    outcome: "",
   },
 ];
 

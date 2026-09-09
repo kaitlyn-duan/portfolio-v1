@@ -1,6 +1,5 @@
-// GitHub Pages serves this repo at https://kaitlyn-duan.github.io/portfolio-v1/,
-// so static assets/links need that base path — but only for the Pages build,
-// not local dev or a future custom-domain deploy. Must be NEXT_PUBLIC_-prefixed
-// so the value is inlined consistently in both server and client bundles.
+// The site is served from the root of kaitlynduan.com, so no base path is
+// needed. Setting NEXT_PUBLIC_GITHUB_PAGES=true restores the /portfolio-v1
+// prefix for a fallback deploy to kaitlyn-duan.github.io/portfolio-v1/.
 export const repoName = "portfolio-v1";
 export const basePath = process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" ? `/${repoName}` : "";

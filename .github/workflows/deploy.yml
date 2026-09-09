@@ -24,9 +24,9 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # No NEXT_PUBLIC_GITHUB_PAGES: the custom domain serves from the root, so
+      # the build must not prefix assets with the repo name.
       - run: npm run build
-        env:
-          NEXT_PUBLIC_GITHUB_PAGES: "true"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

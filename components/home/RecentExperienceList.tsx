@@ -6,7 +6,7 @@ import { TagPill } from "@/components/shared/TagPill";
 
 export function RecentExperienceList() {
   return (
-    <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-20 sm:py-28">
+    <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 pb-20 pt-10 sm:pb-28 sm:pt-12">
       <ScrollReveal>
         <div className="flex items-end justify-between gap-4">
           <SectionHeading eyebrow="Timeline" title="Recent Experience" />

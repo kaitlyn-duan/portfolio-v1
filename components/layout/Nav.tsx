@@ -64,7 +64,17 @@ export function Nav() {
           className="fixed inset-x-0 top-4 z-30 flex flex-col items-center gap-2 px-4 sm:top-6"
         >
           <nav className="flex w-full max-w-3xl items-center justify-between gap-4 rounded-full border border-line bg-paper/80 px-4 py-2 shadow-sm backdrop-blur-md sm:px-6 sm:py-3">
-            <Link href="/" className="flex shrink-0 items-center">
+            <Link
+              href="/"
+              className="flex shrink-0 items-center"
+              // Already home, so the route never changes and nothing would move:
+              // scroll back to the top instead.
+              onClick={(event) => {
+                if (normalizedPathname !== "/") return;
+                event.preventDefault();
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
               <Logo />
             </Link>
 

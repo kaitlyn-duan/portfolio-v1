@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { basePath } from "@/lib/basePath";
 import { education } from "@/lib/data/experience";
 import { ScrollReveal } from "@/components/shared/ScrollReveal";
 import { TapeSticker } from "@/components/shared/TapeSticker";
 
 export function AboutTeaser() {
   return (
-    <section className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-20 sm:py-28">
+    <section className="relative mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 pb-24 pt-20 sm:pt-28">
       <ScrollReveal>
         <div className="flex flex-col gap-6 border-t border-line pt-12 sm:flex-row sm:items-start sm:justify-between">
           <p className="max-w-3xl font-display text-3xl uppercase leading-tight tracking-tight text-ink sm:text-4xl">
@@ -22,6 +23,17 @@ export function AboutTeaser() {
             </Link>
           </div>
         </div>
+      </ScrollReveal>
+
+      {/* Sticker slapped in the bottom corner, same hover moves as the ones on
+          the about page. */}
+      <ScrollReveal className="absolute bottom-2 right-6 hidden sm:block">
+        <img
+          src={`${basePath}/images/about-cat-sticker-4.png`}
+          alt=""
+          style={{ "--sticker-rotate": "5deg" } as React.CSSProperties}
+          className="h-28 w-auto cat-sticker cat-sticker-hop"
+        />
       </ScrollReveal>
     </section>
   );

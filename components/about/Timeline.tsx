@@ -19,7 +19,7 @@ export function Timeline() {
                   <p className="font-display text-2xl uppercase tracking-tight text-ink">
                     {entry.role}
                   </p>
-                  <p className="font-mono text-xs uppercase tracking-wide text-ink-soft">
+                  <p className="font-body text-sm italic tracking-normal text-ink-soft">
                     @ {entry.company}
                   </p>
                 </div>

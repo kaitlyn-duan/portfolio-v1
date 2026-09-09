@@ -1,3 +1,5 @@
+import { basePath } from "@/lib/basePath";
+
 export type Project = {
   slug: string;
   title: string;
@@ -6,6 +8,8 @@ export type Project = {
   role: string;
   duration: string;
   season: string;
+  teamSize?: string;
+  thumbnail?: string;
   tags: string[];
   featured: boolean;
   heroAspectRatio: "16/9" | "4/3" | "1/1" | "3/4";
@@ -17,67 +21,65 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    slug: "onroute-homepage-redesign",
-    title: "ONroute Homepage Redesign",
-    company: "ITSP",
+    slug: "mythweave",
+    title: "Teamfight Tactics: Mythweave",
+    company: "Personal Project",
     oneLiner:
-      "UX research and homepage redesign for ONroute's website, built around how travelers actually search for service.",
-    role: "Product Design Intern",
-    duration: "Internship project",
-    season: "2024",
-    tags: ["UX Research", "Web", "Information Architecture"],
+      "A speculative TFT set concept: a mythic, hand-illustrated card frame redesign for the game's Augment system.",
+    role: "Visual Designer",
+    duration: "Personal project",
+    season: "2026",
+    thumbnail: `${basePath}/images/work/mythweave-thumbnail.png`,
+    tags: ["Visual Design", "Game UI", "Illustration"],
     featured: true,
     heroAspectRatio: "16/9",
-    metrics: [
-      { label: "Usability", value: "+27%" },
-      { label: "Search time", value: "-50%+" },
-    ],
+    metrics: [],
     problem:
-      "Travelers struggled to quickly find the service information they needed on ONroute's homepage.",
+      "Wanted to explore what a fully realized visual identity for a TFT set could look like, from mood to a shipped-feeling card frame.",
     process:
-      "Led UX research to understand real search behavior, then redesigned the homepage information architecture around it.",
-    outcome: "Usability improved by 27% and service search times dropped by more than 50%.",
+      "Researched past TFT set art direction, then designed and iterated on an original Augment card frame across two rounds before finalizing gold and silver tiers.",
+    outcome: "A cohesive card system spanning research, iteration, and final art across two augment tiers.",
   },
   {
-    slug: "kensington-tours-database",
-    title: "Kensington Tours Customer Database",
-    company: "ITSP",
+    slug: "warframe-referral-page",
+    title: "Warframe Referral Page",
+    company: "Digital Extremes",
     oneLiner:
-      "Redesigned Kensington Tours' internal customer database with role-based views for faster, clearer access.",
-    role: "Product Design Intern",
-    duration: "Internship project",
-    season: "2024",
-    tags: ["Internal Tools", "Systems Design"],
+      "A redesigned referral program page for Warframe, making it clearer for players to share the game and track rewards.",
+    role: "UI Designer",
+    duration: "Professional project",
+    season: "2026",
+    thumbnail: `${basePath}/images/work/warframe-thumbnail.png`,
+    tags: ["UI Design", "Web", "Growth"],
     featured: true,
-    heroAspectRatio: "4/3",
-    metrics: [
-      { label: "Search time", value: "-57%" },
-      { label: "Cross-team efficiency", value: "Improved" },
-    ],
+    heroAspectRatio: "16/9",
+    metrics: [],
     problem:
-      "A single, undifferentiated database view slowed down teams who each needed different information at a glance.",
+      "Warframe's referral program was hard to find and harder to understand, so most players never used it.",
     process:
-      "Directed the redesign around role-based views, tailoring what each team sees and can act on.",
-    outcome: "Search time dropped 57% and cross-team efficiency improved.",
+      "Redesigned the referral page's flow and visual hierarchy to make sharing a link and tracking rewards immediately clear.",
+    outcome: "A clearer, more inviting referral page ready to ship on the Warframe website.",
   },
   {
     slug: "panasonic-kds-ui",
-    title: "Panasonic Kitchen Display System UI",
+    title: "Panasonic Kitchen Display System Redesign",
     company: "ITSP",
     oneLiner:
-      "A configurable UI for Panasonic's Kitchen Display System, built to streamline kitchen workflows under pressure.",
+      "Redesigned a configurable kitchen display platform's order flow, card system, and alert states for Panasonic.",
     role: "Product Design Intern",
-    duration: "Internship project",
-    season: "2024",
-    tags: ["UI Design", "Configurable Systems"],
+    duration: "6-month project",
+    season: "2025",
+    teamSize: "5 People",
+    thumbnail: `${basePath}/images/work/panasonic-thumbnail.png`,
+    tags: ["UX/UXR", "UI Design", "Configurable Systems", "B2B"],
     featured: true,
     heroAspectRatio: "16/9",
-    metrics: [{ label: "Order errors", value: "-30%+" }],
+    metrics: [],
     problem:
-      "Kitchen staff needed a fast, configurable display that reduced mistakes during high-volume service.",
+      "The existing kitchen display used a single fixed layout that couldn't be configured per restaurant brand or store.",
     process:
-      "Delivered a configurable UI and contributed to scalable design systems that cut design-to-dev handoff time by 40%.",
-    outcome: "Order errors fell by more than 30%, with workflows streamlined kitchen-wide.",
+      "Owned the ticket information hierarchy, card system, and alert-state design across a 5-person team.",
+    outcome: "Shipped to production.",
   },
   {
     slug: "awowogei-arts",
@@ -88,6 +90,7 @@ export const projects: Project[] = [
     role: "Founder",
     duration: "Independent business",
     season: "Ongoing",
+    teamSize: "Solo",
     tags: ["Founder", "Growth", "Community"],
     featured: false,
     heroAspectRatio: "1/1",

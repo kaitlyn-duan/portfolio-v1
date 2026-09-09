@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type PlaceholderFrameProps = {
   label?: string;
-  aspectRatio?: "16/9" | "4/3" | "1/1" | "3/4";
+  aspectRatio?: "16/9" | "4/3" | "1/1" | "3/4" | "21/9" | "screen";
   className?: string;
 };
 
@@ -11,6 +11,8 @@ const ratioClass: Record<NonNullable<PlaceholderFrameProps["aspectRatio"]>, stri
   "4/3": "aspect-[4/3]",
   "1/1": "aspect-square",
   "3/4": "aspect-[3/4]",
+  "21/9": "aspect-[21/9]",
+  screen: "h-[60vh] sm:h-[75vh] lg:h-[85vh]",
 };
 
 export function PlaceholderFrame({
@@ -34,7 +36,7 @@ export function PlaceholderFrame({
         }}
         aria-hidden="true"
       />
-      <span className="relative z-10 rounded-full border border-line bg-paper px-3 py-1 font-mono text-xs uppercase tracking-wide text-ink-soft">
+      <span className="relative z-10 rounded-full border border-line bg-paper px-3 py-1 font-body text-xs uppercase tracking-wide text-ink-soft">
         {label}
       </span>
     </div>

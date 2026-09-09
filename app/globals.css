@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --color-paper: #f4efe3;
-  --color-paper-alt: #ede4cf;
-  --color-ink: #1a1613;
-  --color-ink-soft: #6b6255;
-  --color-line: #c9bfa8;
+  --color-paper: #fafafa;
+  --color-paper-alt: #f0f0f1;
+  --color-ink: #18181b;
+  --color-ink-soft: #6b6b70;
+  --color-line: #d4d4d8;
   --color-accent-red: #d6402c;
   --color-accent-electric: #4a4ce8;
 }
@@ -21,28 +21,17 @@
 
   --font-display: var(--font-display);
   --font-body: var(--font-body);
-  --font-handwritten: var(--font-handwritten);
+  --font-serif-italic: var(--font-serif-italic);
   --font-mono: var(--font-mono);
+  --font-word-create: var(--font-word-create);
+  --font-word-design: var(--font-word-design);
+  --font-word-iterate: var(--font-word-iterate);
 }
 
 body {
   background: var(--color-paper);
   color: var(--color-ink);
   font-family: var(--font-body);
-}
-
-/* Subtle workboard/blueprint grid, sits behind content across the whole site */
-.grid-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  opacity: 0.2;
-  mix-blend-mode: multiply;
-  background-image:
-    linear-gradient(to right, var(--color-line) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
-  background-size: 32px 32px;
 }
 
 /* Paper-grain overlay: pure CSS/SVG noise, no image asset required */
@@ -59,4 +48,78 @@ body {
 ::selection {
   background: var(--color-accent-electric);
   color: var(--color-paper);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 34s linear infinite;
+}
+
+/* Cat stickers: each one gets its own small hover move. The resting tilt lives
+   in --sticker-rotate so the keyframes can wobble around it. */
+.cat-sticker {
+  transform: rotate(var(--sticker-rotate));
+  transform-origin: bottom center;
+  transition: transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cat-sticker-peek:hover {
+  transform: translateY(-10px) rotate(0deg) scale(1.12);
+}
+
+.cat-sticker-hop:hover {
+  animation: sticker-hop 620ms ease-in-out;
+}
+
+.cat-sticker-wiggle:hover {
+  /* forwards so it settles at the slightly-larger end state while hovered */
+  animation: sticker-wiggle 520ms ease-in-out forwards;
+}
+
+@keyframes sticker-hop {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--sticker-rotate));
+  }
+  30% {
+    transform: translateY(-14px) rotate(calc(var(--sticker-rotate) + 6deg)) scale(1.06);
+  }
+  55% {
+    transform: translateY(0) rotate(var(--sticker-rotate));
+  }
+  78% {
+    transform: translateY(-5px) rotate(var(--sticker-rotate)) scale(1.03);
+  }
+}
+
+@keyframes sticker-wiggle {
+  0%,
+  100% {
+    transform: rotate(var(--sticker-rotate)) scale(1.08);
+  }
+  25% {
+    transform: rotate(calc(var(--sticker-rotate) - 9deg)) scale(1.08);
+  }
+  50% {
+    transform: rotate(calc(var(--sticker-rotate) + 9deg)) scale(1.08);
+  }
+  75% {
+    transform: rotate(calc(var(--sticker-rotate) - 5deg)) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cat-sticker,
+  .cat-sticker-peek:hover,
+  .cat-sticker-hop:hover,
+  .cat-sticker-wiggle:hover {
+    animation: none;
+    transition: none;
+    transform: rotate(var(--sticker-rotate));
+  }
 }

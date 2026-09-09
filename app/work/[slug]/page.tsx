@@ -12,8 +12,12 @@ type CaseStudyPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+// These slugs have their own bespoke pages under app/work/<slug>/page.tsx
+const BESPOKE_SLUGS = ["panasonic-kds-ui", "mythweave", "warframe-referral-page"];
+const genericTemplateSlugs = projects.filter((p) => !BESPOKE_SLUGS.includes(p.slug));
+
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return genericTemplateSlugs.map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({
@@ -36,7 +40,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   const nextProject = projects[(currentIndex + 1) % projects.length];
 
   return (
-    <article className="mx-auto flex w-full max-w-4xl flex-col gap-16 px-6 py-16 sm:py-24">
+    <article className="mx-auto flex w-full max-w-4xl flex-col gap-16 px-6 pb-16 pt-8 sm:pb-24 sm:pt-10">
       <ScrollReveal>
         <CaseStudyHeader project={project} />
       </ScrollReveal>

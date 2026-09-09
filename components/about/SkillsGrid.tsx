@@ -20,7 +20,7 @@ export function SkillsGrid() {
         {columns.map((column, i) => (
           <ScrollReveal key={column.label} delay={i * 0.05}>
             <div className="flex flex-col gap-4">
-              <h3 className="font-mono text-xs uppercase tracking-[0.2em] text-ink-soft">
+              <h3 className="font-body text-sm italic tracking-normal text-ink-soft">
                 {column.label}
               </h3>
               <div className="flex flex-wrap gap-2">

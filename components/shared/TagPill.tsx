@@ -9,7 +9,7 @@ export function TagPill({ children, className }: TagPillProps) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border border-line bg-paper px-2.5 py-1 font-mono text-xs uppercase tracking-wide text-ink-soft",
+        "inline-flex items-center rounded-full border border-line bg-paper px-2.5 py-1 font-body text-xs uppercase tracking-wide text-ink-soft",
         className,
       )}
     >

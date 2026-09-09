@@ -18,12 +18,13 @@ export function FounderStorySection() {
       <ScrollReveal>
         <div className="flex flex-col items-start gap-6">
           <TapeSticker rotate={-2}>side quest: {founderEntry.company}</TapeSticker>
-          <h2 className="max-w-2xl font-display text-3xl uppercase leading-tight tracking-tight text-ink sm:text-4xl">
-            Outside the internships, I built a business from scratch.
+          <h2 className="max-w-3xl font-display text-3xl uppercase leading-tight tracking-tight text-ink sm:text-4xl">
+            The art account grew up and got a storefront.
           </h2>
-          <p className="max-w-2xl text-ink-soft">
-            A self-developed storefront for custom prints, grown through a direct feedback
-            community and data-driven marketing rather than ad spend.
+          <p className="max-w-3xl text-ink-soft">
+            @awowogei_arts started as somewhere to put the drawings. It became a self-built shop
+            for custom prints, grown through a Discord community I actually talk to and search
+            data I actually read, rather than ad spend.
           </p>
           <div className="flex flex-wrap gap-8 border-y border-line py-6">
             {highlights.map((metric) => (

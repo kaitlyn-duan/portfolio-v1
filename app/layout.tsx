@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { display, body, handwritten, mono } from "@/lib/fonts";
+import { display, body, serifItalic, mono, wordCreate, wordDesign, wordIterate } from "@/lib/fonts";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { PageTransition } from "@/components/layout/PageTransition";
 import { Grain } from "@/components/shared/Grain";
-import { Grid } from "@/components/shared/Grid";
 import { site } from "@/lib/data/site";
 import "./globals.css";
 
@@ -21,13 +20,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} ${handwritten.variable} ${mono.variable} h-full antialiased`}
+      className={`${display.variable} ${body.variable} ${serifItalic.variable} ${mono.variable} ${wordCreate.variable} ${wordDesign.variable} ${wordIterate.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-paper text-ink">
-        <Grid />
+      <body className="flex min-h-full flex-col overflow-x-hidden bg-paper text-ink">
         <Grain />
         <Nav />
-        <main className="flex-1">
+        <main className="flex-1 pt-28 sm:pt-24">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer />

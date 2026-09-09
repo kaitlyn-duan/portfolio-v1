@@ -14,7 +14,7 @@ export function PlaygroundCard({ title, description, children }: PlaygroundCardP
           <h2 className="font-display text-3xl uppercase tracking-tight text-ink sm:text-4xl">
             {title}
           </h2>
-          <p className="max-w-xl text-ink-soft">{description}</p>
+          <p className="text-ink-soft">{description}</p>
         </div>
         {children}
       </div>

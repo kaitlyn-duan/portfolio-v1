@@ -42,3 +42,6 @@ next-env.d.ts
 
 # local claude code settings (machine-specific permissions)
 .claude/settings.local.json
+
+# raw design source files (large, not needed for the build)
+/Assets/

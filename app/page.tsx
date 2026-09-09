@@ -3,13 +3,13 @@ import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { AboutTeaser } from "@/components/home/AboutTeaser";
 import { RecentExperienceList } from "@/components/home/RecentExperienceList";
 import { ContactCta } from "@/components/home/ContactCta";
-import { SketchDivider } from "@/components/shared/SketchDivider";
+import { SectionDivider } from "@/components/shared/SectionDivider";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <SketchDivider />
+      <SectionDivider />
       <FeaturedProjects />
       <AboutTeaser />
       <RecentExperienceList />

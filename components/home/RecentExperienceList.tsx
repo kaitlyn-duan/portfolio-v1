@@ -6,13 +6,13 @@ import { TagPill } from "@/components/shared/TagPill";
 
 export function RecentExperienceList() {
   return (
-    <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-20">
+    <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-20 sm:py-28">
       <ScrollReveal>
         <div className="flex items-end justify-between gap-4">
           <SectionHeading eyebrow="Timeline" title="Recent Experience" />
           <Link
             href="/about"
-            className="font-mono text-sm uppercase tracking-wide text-ink-soft transition-colors hover:text-accent-electric"
+            className="font-body text-sm uppercase tracking-wide text-ink-soft transition-colors hover:text-accent-electric"
           >
             See All
           </Link>
@@ -27,7 +27,7 @@ export function RecentExperienceList() {
                 <p className="font-display text-xl uppercase tracking-tight text-ink">
                   {entry.role}
                 </p>
-                <p className="font-mono text-xs uppercase tracking-wide text-ink-soft">
+                <p className="font-body text-sm italic tracking-normal text-ink-soft">
                   @ {entry.company}
                 </p>
               </div>

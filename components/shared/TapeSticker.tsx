@@ -11,7 +11,7 @@ export function TapeSticker({ children, rotate = -3, className }: TapeStickerPro
   return (
     <div
       className={cn(
-        "inline-block border border-line bg-paper-alt px-4 py-2 font-handwritten text-lg text-ink shadow-sm",
+        "inline-block border border-line bg-paper-alt px-4 py-2 font-body text-sm uppercase tracking-wide text-ink shadow-sm",
         className,
       )}
       style={{ transform: `rotate(${rotate}deg)` }}

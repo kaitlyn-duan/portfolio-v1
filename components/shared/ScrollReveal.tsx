@@ -1,23 +1,27 @@
 "use client";
 
-import { motion } from "motion/react";
+import { InView } from "@/components/core/in-view";
 
 type ScrollRevealProps = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  id?: string;
 };
 
-export function ScrollReveal({ children, className, delay = 0 }: ScrollRevealProps) {
+export function ScrollReveal({ children, className, delay = 0, id }: ScrollRevealProps) {
   return (
-    <motion.div
+    <InView
+      id={id}
       className={className}
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] as const }}
+      variants={{
+        hidden: { opacity: 0, y: 100, filter: "blur(4px)" },
+        visible: { opacity: 1, y: 0, filter: "blur(0px)" },
+      }}
+      viewOptions={{ once: true, margin: "0px 0px -200px 0px" }}
+      transition={{ duration: 0.3, ease: "easeInOut", delay }}
     >
       {children}
-    </motion.div>
+    </InView>
   );
 }

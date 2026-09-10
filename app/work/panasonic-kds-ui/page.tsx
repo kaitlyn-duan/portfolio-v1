@@ -378,8 +378,8 @@ export default function PanasonicKdsCaseStudy() {
             <CaseStudyHero
               title="Kitchen Display System Redesign"
               timeframe="Panasonic, 2025"
-              role="Product Design Intern"
-              duration="6 Months"
+              role="Product Designer"
+              duration="4 Months"
               teamSize="5 People"
               images={[
                 {

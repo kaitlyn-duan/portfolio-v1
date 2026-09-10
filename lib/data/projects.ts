@@ -69,8 +69,8 @@ export const projects: Project[] = [
     company: "ITSP",
     oneLiner:
       "Redesigned a configurable kitchen display platform's order flow, card system, and alert states for Panasonic.",
-    role: "Product Design Intern",
-    duration: "6-month project",
+    role: "Product Designer",
+    duration: "4-month project",
     season: "2025",
     teamSize: "5 People",
     thumbnail: `${basePath}/images/work/panasonic-thumbnail.png`,
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     oneLiner:
       "A charity campaign page for Warframe at Digital Extremes, where I owned the design and the full user flow end to end.",
     role: "Product Designer",
-    duration: "Digital Extremes",
+    duration: "Professional project",
     season: "2026",
     thumbnail: `${basePath}/images/work/warframe-charity-thumbnail.jpg`,
     tags: ["End-to-End Design", "User Flows", "Campaign Page"],

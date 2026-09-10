@@ -82,14 +82,6 @@ export function Nav() {
 
             <div className="flex shrink-0 items-center gap-3 sm:gap-4">
               <a
-                href={site.resumePath}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden font-body text-sm tracking-wide text-ink-soft transition-colors hover:text-ink sm:inline"
-              >
-                Resume
-              </a>
-              <a
                 href={`mailto:${site.email}`}
                 className="rounded-full bg-ink px-4 py-1.5 font-body text-xs tracking-wide text-paper transition-colors hover:bg-accent-red sm:text-sm"
               >

@@ -14,14 +14,6 @@ export function Footer() {
           <a href={`mailto:${site.email}`} className="transition-colors hover:text-accent-electric">
             {site.email}
           </a>
-          <a
-            href={site.resumePath}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-accent-electric"
-          >
-            View Resume
-          </a>
         </div>
       </div>
     </footer>

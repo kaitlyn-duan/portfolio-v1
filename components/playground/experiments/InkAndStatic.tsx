@@ -156,7 +156,7 @@ export function InkAndStatic() {
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
-          className="h-full w-full touch-none rounded-sm border border-line bg-paper-alt"
+          className="absolute inset-0 h-full w-full touch-none rounded-sm border border-line bg-paper-alt"
         />
         {isEmpty && (
           <span className="pointer-events-none absolute inset-0 flex items-center justify-center font-body text-xs uppercase tracking-wide text-ink-soft">

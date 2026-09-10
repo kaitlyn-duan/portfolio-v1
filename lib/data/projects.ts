@@ -24,6 +24,27 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "panasonic-kds-ui",
+    title: "Panasonic Kitchen Display System Redesign",
+    company: "ITSP",
+    oneLiner:
+      "Redesigned a configurable kitchen display platform's order flow, card system, and alert states for Panasonic.",
+    role: "Product Designer",
+    duration: "4-month project",
+    season: "2025",
+    teamSize: "5 People",
+    thumbnail: `${basePath}/images/work/panasonic-thumbnail.png`,
+    tags: ["UX/UXR", "UI Design", "Configurable Systems", "B2B"],
+    featured: true,
+    heroAspectRatio: "16/9",
+    metrics: [],
+    problem:
+      "The existing kitchen display used a single fixed layout that couldn't be configured per restaurant brand or store.",
+    process:
+      "Owned the ticket information hierarchy, card system, and alert-state design across a 5-person team.",
+    outcome: "Shipped to production.",
+  },
+  {
     slug: "mythweave",
     title: "Teamfight Tactics: Mythweave",
     company: "Personal Project",
@@ -62,27 +83,6 @@ export const projects: Project[] = [
     process:
       "Redesigned the referral page's flow and visual hierarchy to make sharing a link and tracking rewards immediately clear.",
     outcome: "A clearer, more inviting referral page ready to ship on the Warframe website.",
-  },
-  {
-    slug: "panasonic-kds-ui",
-    title: "Panasonic Kitchen Display System Redesign",
-    company: "ITSP",
-    oneLiner:
-      "Redesigned a configurable kitchen display platform's order flow, card system, and alert states for Panasonic.",
-    role: "Product Designer",
-    duration: "4-month project",
-    season: "2025",
-    teamSize: "5 People",
-    thumbnail: `${basePath}/images/work/panasonic-thumbnail.png`,
-    tags: ["UX/UXR", "UI Design", "Configurable Systems", "B2B"],
-    featured: true,
-    heroAspectRatio: "16/9",
-    metrics: [],
-    problem:
-      "The existing kitchen display used a single fixed layout that couldn't be configured per restaurant brand or store.",
-    process:
-      "Owned the ticket information hierarchy, card system, and alert-state design across a 5-person team.",
-    outcome: "Shipped to production.",
   },
   {
     slug: "warframe-charity-page",

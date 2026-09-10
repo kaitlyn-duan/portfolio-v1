@@ -23,17 +23,6 @@ const workIcon = (
   </svg>
 );
 
-// The landing page leads with Panasonic, then Mythweave, then Warframe. The /work
-// page keeps the order declared in lib/data/projects.ts.
-const HOME_ORDER = ["panasonic-kds-ui", "mythweave", "warframe-referral-page"];
-
-const rank = (slug: string) => {
-  const index = HOME_ORDER.indexOf(slug);
-  return index === -1 ? HOME_ORDER.length : index;
-};
-
-const orderedProjects = [...featuredProjects].sort((a, b) => rank(a.slug) - rank(b.slug));
-
 export function FeaturedProjects() {
   return (
     <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-6 py-20 sm:py-28">
@@ -47,7 +36,7 @@ export function FeaturedProjects() {
         </Link>
       </div>
 
-      <ProjectGrid projects={orderedProjects} variant="stacked" />
+      <ProjectGrid projects={featuredProjects} variant="stacked" />
     </section>
   );
 }

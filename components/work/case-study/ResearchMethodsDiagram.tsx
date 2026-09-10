@@ -107,7 +107,7 @@ export function ResearchMethodsDiagram() {
               initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
               whileHover={{ scale: 1.045 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1, ease: EASE }}
             />
           ))}
@@ -117,7 +117,7 @@ export function ResearchMethodsDiagram() {
               key={`${ring.id}-connector`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 + 0.3, ease: EASE }}
             >
               <line
@@ -153,7 +153,7 @@ export function ResearchMethodsDiagram() {
               style={{ fontSize: 2.8 }}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1 + 0.2, ease: EASE }}
             >
               {ring.label}
@@ -165,7 +165,7 @@ export function ResearchMethodsDiagram() {
               key={`${ring.id}-stat`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true }}
               transition={{ duration: 0.4, delay: index * 0.1, ease: EASE }}
             >
               <text

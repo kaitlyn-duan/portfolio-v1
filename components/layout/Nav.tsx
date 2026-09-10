@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { AnimatedBackground } from "@/components/core/animated-background";
+import { BackButton } from "@/components/layout/BackButton";
 import { Logo } from "@/components/layout/Logo";
 import { useScrolledPastThreshold } from "@/hooks/useScrollDirection";
 import { site } from "@/lib/data/site";
@@ -28,6 +29,7 @@ export function Nav() {
   const hasSectionToolbar = PAGES_WITH_SECTION_TOOLBAR.includes(normalizedPathname);
   const scrolledPast = useScrolledPastThreshold(140);
   const visible = !hasSectionToolbar || !scrolledPast;
+  const showBack = normalizedPathname !== "/";
 
   const renderLinks = () => (
     <AnimatedBackground
@@ -63,32 +65,45 @@ export function Nav() {
           exit={{ opacity: 0, y: -8, transition: { duration: 0.12, ease: "easeIn" } }}
           className="fixed inset-x-0 top-4 z-30 flex flex-col items-center gap-2 px-4 sm:top-6"
         >
-          <nav className="flex w-full max-w-3xl items-center justify-between gap-4 rounded-full border border-line bg-paper/80 px-4 py-2 shadow-sm backdrop-blur-md sm:px-6 sm:py-3">
-            <Link
-              href="/"
-              className="flex shrink-0 items-center"
-              // Already home, so the route never changes and nothing would move:
-              // scroll back to the top instead.
-              onClick={(event) => {
-                if (normalizedPathname !== "/") return;
-                event.preventDefault();
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }}
-            >
-              <Logo />
-            </Link>
+          <div className="relative flex w-full justify-center">
+            {/* Wide screens have room beside the centred pill, so the back button
+                sits in the top-left corner; narrower ones carry it inside the pill. */}
+            {showBack ? (
+              <div className="absolute inset-y-0 left-2 hidden items-center lg:flex">
+                <BackButton className="h-11 w-11 rounded-[10px]" />
+              </div>
+            ) : null}
 
-            <div className="hidden sm:flex">{renderLinks()}</div>
+            <nav className="flex w-full max-w-3xl items-center justify-between gap-4 rounded-full border border-line bg-paper/80 px-4 py-2 shadow-sm backdrop-blur-md sm:px-6 sm:py-3">
+              <div className="flex shrink-0 items-center gap-3">
+                {showBack ? <BackButton className="h-9 w-9 rounded-lg lg:hidden" /> : null}
+                <Link
+                  href="/"
+                  className="flex shrink-0 items-center"
+                  // Already home, so the route never changes and nothing would move:
+                  // scroll back to the top instead.
+                  onClick={(event) => {
+                    if (normalizedPathname !== "/") return;
+                    event.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }}
+                >
+                  <Logo />
+                </Link>
+              </div>
 
-            <div className="flex shrink-0 items-center gap-3 sm:gap-4">
-              <a
-                href={`mailto:${site.email}`}
-                className="rounded-full bg-ink px-4 py-1.5 font-body text-xs tracking-wide text-paper transition-colors hover:bg-accent-red sm:text-sm"
-              >
-                Let&rsquo;s Talk!
-              </a>
-            </div>
-          </nav>
+              <div className="hidden sm:flex">{renderLinks()}</div>
+
+              <div className="flex shrink-0 items-center gap-3 sm:gap-4">
+                <a
+                  href={`mailto:${site.email}`}
+                  className="rounded-full bg-ink px-4 py-1.5 font-body text-xs tracking-wide text-paper transition-colors hover:bg-accent-red sm:text-sm"
+                >
+                  Let&rsquo;s Talk!
+                </a>
+              </div>
+            </nav>
+          </div>
 
           <div className="rounded-full border border-line bg-paper/80 px-2 py-1 shadow-sm backdrop-blur-md sm:hidden">
             {renderLinks()}

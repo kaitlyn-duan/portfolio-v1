@@ -132,7 +132,7 @@ export function AboutStory() {
         <Body>
           Outside of design, I&rsquo;m usually gaming, travelling, or making something. I play
           League, Valorant, TFT, and whatever random game I&rsquo;m into that week. I also run a
-          gaming YouTube channel and recently got back from Mexico.
+          gaming YouTube channel. I also love travelling.
         </Body>
 
         <Beat>At the end of the day, I don&rsquo;t just want to make things that look good.</Beat>
